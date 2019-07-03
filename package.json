@@ -1,9 +1,12 @@
 {
   "name": "@taskforcesh/message-broker",
   "version": "0.0.0-development",
-  "main": "dist/message-broker.js",
-  "types": "dist/message-broker.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "source": "src/index.ts",
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/taskforcesh/message-broker.git",
   "author": "<manuel.astudillo@apsis.com>",
   "license": "commercial",
@@ -13,7 +16,7 @@
     "lint": "node_modules/.bin/tslint --project tsconfig.json -c tslint.json 'src/**/*.ts'",
     "test": "yarn build && node_modules/.bin/jest --passWithNoTests",
     "test:watch": "node_modules/.bin/jest --watch",
-    "semantic-release": "semantic-release"
+    "semantic-release": "tsc && semantic-release"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^8.0.0",
@@ -74,5 +77,8 @@
   "dependencies": {
     "@types/node": "^12.0.10",
     "uuid": "^3.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

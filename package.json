@@ -14,9 +14,9 @@
     "dev": "tsc --watch",
     "build": "node_modules/typescript/bin/tsc",
     "lint": "node_modules/.bin/tslint --project tsconfig.json -c tslint.json 'src/**/*.ts'",
-    "test": "yarn build && node_modules/.bin/jest --passWithNoTests",
-    "test:watch": "node_modules/.bin/jest --watch",
-    "semantic-release": "tsc && semantic-release"
+    "semantic-release": "tsc && semantic-release",
+    "test": "mocha --require ts-node/register tests/**/*.ts",
+    "postinstall": "npx tsc"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^8.0.0",
